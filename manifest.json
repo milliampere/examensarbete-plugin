@@ -1,0 +1,14 @@
+{
+  "name": "A nutrition calculator",
+  "description": "Nutrition",
+  "version": "1.0",
+  "permissions": [
+    "activeTab"
+  ],
+  "browser_action": {
+      "default_title": "Nutrition",
+      "default_icon": "apple.png",
+      "default_popup": "popup.html"
+  },
+  "manifest_version": 2
+}
