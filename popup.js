@@ -7,13 +7,14 @@
 chrome.runtime.onMessage.addListener(function(request, sender) {
   if (request.action == "getSource") {
 
+
     if(request.source.length > 0){
       var html = "<table><tr><th>Mängd</th><th>Ingrediens</th></tr>";
       request.source.map((ingredient) => {
-        html += `<tr><td>${ingredient.amount}</td><td>${ingredient.name}</td></tr>`
+        html += `<tr><td>${ingredient.amount}${ingredient.type}</td><td>${ingredient.name}</td></tr>`
       })
-      html += "</table>"; 
-  
+      html += "</table>";
+
       message.innerHTML = html;
     }
     else {
@@ -36,7 +37,7 @@ function onWindowLoad(e) {
       message.innerText = 'There was an error injecting script : \n' + chrome.runtime.lastError.message;
     }
   });
-  
+
 }
 
 window.onload = onWindowLoad;
